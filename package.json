@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd cv_reader && npm run dev && cd .. && cd myCvServer && npm run start  "
+    "dev": "concurrently \"npm run front\"  \"npm run server\"",
+    "front": "cd cv_reader && npm run dev ",
+    "server": "cd myCvServer && npm run start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
